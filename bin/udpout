@@ -1,0 +1,37 @@
+#! /usr/bin/env node
+'use strict';
+
+process.bin = process.title = 'udpout';
+
+var packageInfo = require('../package.json');
+var program     = require('commander');
+
+function randomPort() {
+	var MIN_PORT = 1024;
+	var MAX_PORT = 49151;
+	var range = MAX_PORT - MIN_PORT;
+
+	return MIN_PORT + Math.floor(Math.random() * range);
+}
+
+var port = randomPort();
+
+function setPort(inputPort) {
+	port = inputPort ? parseInt(inputPort) : port;
+}
+
+program
+	.version(packageInfo.version)
+	.option('-p, --port <n>', 'port to have the server listen on', setPort)
+	.parse(process.argv);
+
+var HOST = '127.0.0.1';
+
+var dgram = require('dgram');
+var server = dgram.createSocket('udp4');
+
+server.on('message', function (message, remote) {
+    process.stdout.write(message);
+});
+
+server.bind(PORT, HOST);

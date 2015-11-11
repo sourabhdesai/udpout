@@ -1,0 +1,29 @@
+{
+  "name": "udpout",
+  "version": "1.0.0",
+  "description": "Starts a UDP server and spits out any received data through stdout",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "udp",
+    "stdout",
+    "stream",
+    "pipe"
+  ],
+  "author": "sourabhdesai@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "bin": "bin/udpout",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sourabhdesai/udpout.git"
+  },
+  "files": [
+    "bin",
+    "package.json"
+  ]
+}
