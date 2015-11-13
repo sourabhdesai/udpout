@@ -1,6 +1,6 @@
 {
   "name": "udpout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Starts a UDP server and spits out any received data through stdout",
   "main": " ",
   "scripts": {
