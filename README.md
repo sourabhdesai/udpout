@@ -1,6 +1,9 @@
 # udpout
 Starts a UDP server and spits out any received data through stdout
 
+## Installation
+`npm install -g udpout`
+
 ## Usage
     Usage: udpout [options]
 
